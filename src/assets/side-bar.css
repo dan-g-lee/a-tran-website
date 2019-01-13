@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
+.side-bar {
+    animation-name: slidein;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier();
+    position: fixed;
+    height: 100%;
+    max-width: 300px;
+    width: 300px;
+    left: -300px;
+    background-color: #EDECE8;
+}
+
+.flex-box-vert {
+    display: flex;
+    flex-direction: column;
+    /*align-content: center;*/
+    /*justify-content: space-around;*/
+}
+
+.flex-box-item {
+    display: flex;
+    align-self: center;
+}
+
+.photo {
+    border-radius: 50%;
+    width: 50%;
+    margin-top: 50px;
+}
+
+.photo-title h2 {
+    font-family: 'Lato', sans-serif;
+    font-weight: 100;
+    color: #FD6356;
+}
+
+.nav {
+    
+}
+
+.nav ul {
+    list-style-type: none;
+}
+
+.nav ul li a {
+    color: #1F1F1F;
+    text-decoration: none;
+}
+
+.nav ul li a:visited {
+    color: #1F1F1F
+}
+
+.nav ul li a {
+    color: #1F1F1F;
+    opacity: 1.0;
+    transition: opacity 0.15s ease-in-out
+}
+
+.nav ul li a:hover {
+    color: #1F1F1F;
+    opacity: 0.6;
+    transition: opacity 0.15s ease-in-out
+}
+
+@keyframes slidein {
+    100% {left: 0px;}
+}
+
+@keyframes fadeinout {
+
+}
