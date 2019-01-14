@@ -1,4 +1,13 @@
-.App {
+.flex-box-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-item {
+  display: flex;
+}
+
+/*.App {
   text-align: center;
 }
 
@@ -29,4 +38,4 @@
   to {
     transform: rotate(360deg);
   }
-}
+}*/

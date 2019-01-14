@@ -1,15 +1,15 @@
-@import url('https://fonts.googleapis.com/css?family=Lato');
+@import url('https://fonts.googleapis.com/css?family=Lato:30000,400');
 
 .side-bar {
-    animation-name: slidein;
+    /*animation-name: slidein;
     animation-duration: 1s;
     animation-fill-mode: forwards;
-    animation-timing-function: cubic-bezier();
+    animation-timing-function: cubic-bezier();*/
     position: fixed;
     height: 100%;
     max-width: 300px;
     width: 300px;
-    left: -300px;
+    left: 0px;
     background-color: #EDECE8;
 }
 
@@ -18,6 +18,12 @@
     flex-direction: column;
     /*align-content: center;*/
     /*justify-content: space-around;*/
+}
+
+.flex-box-row {
+    display: flex;
+    flex-direction: row;
+    align-content: space-between;
 }
 
 .flex-box-item {
@@ -33,7 +39,8 @@
 
 .photo-title h2 {
     font-family: 'Lato', sans-serif;
-    font-weight: 100;
+    font-weight: 300;
+    font-size: 2em;
     color: #FD6356;
 }
 
