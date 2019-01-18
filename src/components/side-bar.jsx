@@ -8,7 +8,19 @@ export default class SideBar extends React.Component {
         return(
             <div className="side-bar flex-box-vert">
                 <img className="photo flex-box-item" src={Photo} alt="Alanna Tran"/>
-                <div className="photo-title flex-box-item"><h2>Alanna Tran</h2></div>
+                <div className="photo-title flex-box-item"><h2>ALANNA TRAN</h2></div>
+                <div className="flex-box-item line"></div>
+                <div className="photo-subtitle flex-box-item">artist and designer</div>
+                <div className="nav flex-box-item">
+                    <ul>
+                        <li><a href="#/"><div><p>ART</p></div></a></li>
+                        <li><a href="#/design/"><div><p>DESIGN</p></div></a></li>
+                        <li><a href="#/figure-drawings/"><div><p>FIGURE DRAWINGS</p></div></a></li>
+                        <li><a href="#/comics/"><div><p>COMICS</p></div></a></li>
+                        <li><a href="#/sketchbook/"><div><p>SKETCHBOOK</p></div></a></li>
+                        <li><a href="#/about/"><div><p>ABOUT ME</p></div></a></li>
+                    </ul>
+                </div>
                 <div className="links flex-box-item">
                     <SVGIcon 
                         name="linkedin"
@@ -29,16 +41,11 @@ export default class SideBar extends React.Component {
                         link="https://www.instagram.com/tran.arts/"
                     />
                 </div>
-                <div className="nav flex-box-item">
-                    <ul>
-                        <li><a href="#Art">Art</a></li>
-                        <li><a href="#Design">Design</a></li>
-                        <li><a href="#FigureDrawings">Figure Drawings</a></li>
-                        <li><a href="#Comics">Comics</a></li>
-                        <li><a href="#Sketchbook">Sketchbook</a></li>
-                        <li><a href="#About">About Me</a></li>
-                    </ul>
-                </div>
+                {/* <div className="flex-box-item credits">
+                    <p>
+                        Made by <a href="https://danielglee.me" target="_blank" rel="noopener noreferrer">Daniel Lee</a>
+                    </p>
+                </div> */}
             </div>
         );
     }

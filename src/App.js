@@ -8,7 +8,7 @@ class App extends React.Component {
     return (
       <div className="flex-box-row">
         <SideBar className="flex-item" />
-        <PhotoDisplay className="flex-item" />
+        <PhotoDisplay />
       </div>
     );
   }

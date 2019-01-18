@@ -8,6 +8,11 @@
   display: flex;
 }
 
+.content {
+  position: relative;
+  left: 500px;
+}
+
 /*.App {
   text-align: center;
 }
