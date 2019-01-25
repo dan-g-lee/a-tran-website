@@ -1,5 +1,5 @@
 import React from 'react';
-import '../assets/svg-icons.css';
+import '../assets/css/svg-icons.css';
 
 export default class SVGIcon extends React.Component {
 

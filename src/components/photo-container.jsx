@@ -1,5 +1,5 @@
 import React from 'react';
-import '../assets/photo-container.css'
+import '../assets/css/photo-container.css'
 import PropTypes from 'prop-types';
 
 export default class PhotoContainer extends React.Component {
@@ -9,7 +9,7 @@ export default class PhotoContainer extends React.Component {
         title: PropTypes.string,
         caption: PropTypes.string,
         width: PropTypes.number,
-        key: PropTypes.string
+        id: PropTypes.string
     }
 
     // constructor(props) {
@@ -18,7 +18,7 @@ export default class PhotoContainer extends React.Component {
 
     render() {
         return(
-            <div key={this.props.key} className="photo-container-shell">
+            <div key={this.props.id} className="photo-container-shell">
                 <div><img className="photo-container-img" src={this.props.photo} alt={this.props.title}/></div>
                 <div className="photo-container-text">
                     <h2>{this.props.title}</h2>

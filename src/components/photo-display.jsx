@@ -1,7 +1,7 @@
 import React from 'react';
 import sizeMe from 'react-sizeme';
 import StackGrid from 'react-stack-grid';
-import '../assets/photo-display.css'
+import '../assets/css/photo-display.css'
 import photo from '../assets/art-photos/dream-library.png';
 import photo2 from '../assets/art-photos/derive.png';
 import photo3 from '../assets/art-photos/seated-self.png';
@@ -10,26 +10,37 @@ import PhotoContainer from './photo-container';
 
 class PhotoDisplay extends React.Component {
 
-    images = [];
+    images = {};
     items = [];
 
     constructor(props) {
         super(props);
+        this.state = {
+            images: {}
+        }
+        this.init = this.init.bind(this);
         this.generateDummyItems = this.generateDummyItems.bind(this);
+        this.parseKeys = this.parseKeys.bind(this);        
     }
-
-    componentDidMount() {
+    
+    init() {
+        this.parseKeys();
         this.generateDummyItems();
     }
 
+    componentDidMount() {
+        this.init();
+    }
+
     importPhotos(r) {
-        return r.keys().map(r);
+        let images = {}
+        r.keys().forEach((item, index) => { images[index] = r(item); });
+        return images;
     }
 
     parseKeys() {
-        //https://stackoverflow.com/questions/42118296/dynamically-import-images-from-a-directory-using-webpack
-        //https://webpack.js.org/guides/dependency-management/#require-context
-        this.images = this.importPhotos(require.context('./', false, /\.(png|jpe?g|svg)$/))
+        this.images = this.importPhotos(require.context('../assets/art-photos/', false, /\.(png|jpe?g|svg)$/));
+        console.log(this.images);
     }
 
     generateDummyItems() {
@@ -39,10 +50,15 @@ class PhotoDisplay extends React.Component {
                 title={"Dream Library"}
                 caption={"Acrylic on canvas."}
                 width={300}
-                key={"key" + ii}
+                id={"key" + ii}
             />)
             //this.items.push(<div key={"key" + (ii + 1)}>Item {ii}</div>)
         }
+    }
+
+    generateContainers() {
+        let renderable = [];
+
     }
 
     render() {

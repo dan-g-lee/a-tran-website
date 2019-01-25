@@ -1,5 +1,5 @@
 import React from 'react';
-import '../assets/side-bar.css';
+import '../assets/css/side-bar.css';
 import Photo from '../assets/headshot1.jpg';
 import SVGIcon from './svg-icons'
 
