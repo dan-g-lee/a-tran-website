@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import '../assets/css/side-bar.css';
 import Photo from '../assets/headshot1.jpg';
 import SVGIcon from './svg-icons'
@@ -13,12 +14,12 @@ export default class SideBar extends React.Component {
                 <div className="photo-subtitle flex-box-item">artist and designer</div>
                 <div className="nav flex-box-item">
                     <ul>
-                        <li><a href="#/"><div><p>ART</p></div></a></li>
-                        <li><a href="#/design/"><div><p>DESIGN</p></div></a></li>
-                        <li><a href="#/figure-drawings/"><div><p>FIGURE DRAWINGS</p></div></a></li>
-                        <li><a href="#/comics/"><div><p>COMICS</p></div></a></li>
-                        <li><a href="#/sketchbook/"><div><p>SKETCHBOOK</p></div></a></li>
-                        <li><a href="#/about/"><div><p>ABOUT ME</p></div></a></li>
+                        <li><Link to="/art"><div><p>ART</p></div></Link></li>
+                        <li><Link to="/design"><div><p>DESIGN</p></div></Link></li>
+                        <li><Link to="/figure-drawings"><div><p>FIGURE DRAWINGS</p></div></Link></li>
+                        <li><Link to="/comics"><div><p>COMICS</p></div></Link></li>
+                        <li><Link to="/sketchbook"><div><p>SKETCHBOOK</p></div></Link></li>
+                        <li><Link to="/about"><div><p>ABOUT ME</p></div></Link></li>
                     </ul>
                 </div>
                 <div className="links flex-box-item">
