@@ -7,12 +7,41 @@ class Main extends React.Component {
 
     constructor(props) {
         super(props);
+        this.state = {
+            jsx: this.generateRoutes(),
+            keys: Object.keys(this.props.routes)
+        }
         this.generateRoutes = this.generateRoutes.bind(this);
+        this.separatePhotos = this.separatePhotos.bind(this);
+        this.separatePhotos();
+    }
+
+    /**
+     * From a list of key/val pairs of photos, separates according to folder structure
+     */
+    separatePhotos() {
+        let routekeys = Object.keys(this.props.routes);
+        let photoKeys = Object.keys(this.props.photos);
+        let sorted = {};
+        routekeys.forEach((route) => {
+            let routeData = this.props.routes[route];
+            if(routeData.hasPhotos) {
+                //Filter checks whether key contains the folder of the current route, ie art/,
+                //then reduces all correct keys and values into a new object
+                sorted = {
+                    ...sorted,
+                    [route]: photoKeys.filter((k) => { return k.indexOf(routeData.folder) === 0; })
+                             .reduce((photos, k) => { photos[k] = this.props.photos[k]; return photos }, {})
+                };
+            }
+        });
+        return sorted;
     }
 
     generateRoutes() {
         let routes = [];
         let keys = Object.keys(this.props.routes);
+        let sorted = this.separatePhotos();
         console.log("[KEYS]: ", keys);
         keys.forEach((value, index) => {
             console.log("KEY", value);
@@ -31,18 +60,10 @@ class Main extends React.Component {
                         {...props}
                         folder={this.props.routes[value].folder}
                         hasPhotos={this.props.routes[value].hasPhotos}
+                        photos={sorted[value]}
                     />
                 )}/>);
         });
-        /*for(let key in keys) {
-            console.log("KEY", key);
-            if(key === 'home' || key === 'about')
-                routes.push(<Route exact path={this.props.routes[key].route} component={<div></div>} />)
-            else
-                routes.push(<Route path={this.props.routes[key].route} render={() => (
-                    <PhotoDisplay folder={this.props.routes[key].folder} />
-                )}/>);
-        }*/
         console.log(routes);
         return routes;
     }
@@ -51,49 +72,7 @@ class Main extends React.Component {
         return(
             <main>
                 <Switch>
-                    {/* <Route key={0} path={this.props.routes['home'].route} render={(props) => (
-                        <PhotoDisplay
-                            {...props}
-                            folder={this.props.routes['home'].folder}
-                            hasPhotos={this.props.routes['home'].hasPhotos}
-                        />
-                    )}/>
-                    <Route key={1} path={this.props.routes['art'].route} render={(props) => (
-                        <PhotoDisplay
-                            {...props}
-                            folder={this.props.routes['art'].folder}
-                            hasPhotos={this.props.routes['art'].hasPhotos}
-                        />
-                    )}/>
-                    <Route key={2} path={this.props.routes['figure'].route} render={(props) => (
-                        <PhotoDisplay
-                            {...props}
-                            folder={this.props.routes['figure'].folder}
-                            hasPhotos={this.props.routes['figure'].hasPhotos}
-                        />
-                    )}/>
-                    <Route key={3} path={this.props.routes['comics'].route} render={(props) => (
-                        <PhotoDisplay
-                            {...props}
-                            folder={this.props.routes['comics'].folder}
-                            hasPhotos={this.props.routes['comics'].hasPhotos}
-                        />
-                    )}/>
-                    <Route key={4} path={this.props.routes['sketch'].route} render={(props) => (
-                        <PhotoDisplay
-                            {...props}
-                            folder={this.props.routes['sketch'].folder}
-                            hasPhotos={this.props.routes['sketch'].hasPhotos}
-                        />
-                    )}/>
-                    <Route key={5} path={this.props.routes['about'].route} render={(props) => (
-                        <PhotoDisplay
-                            {...props}
-                            folder={this.props.routes['about'].folder}
-                            hasPhotos={this.props.routes['about'].hasPhotos}
-                        />
-                    )}/> */}
-                    {this.generateRoutes()}
+                    {this.state.jsx}
                 </Switch>
             </main>
         );

@@ -6,27 +6,27 @@ export const ROUTES = {
     },
     art: {
         route: '/art',
-        folder: '/art-photos',
+        folder: 'art/',
         hasPhotos: true
     },
     design: {
         route: '/design',
-        folder: '/design-photos',
+        folder: 'design/',
         hasPhotos: true
     },
     figure: {
         route: '/figure-drawings',
-        folder: '/figure-drawings-photos',
+        folder: 'figure-drawings/',
         hasPhotos: true
     },
     comics: {
         route: '/comics',
-        folder: '/comics-photos',
+        folder: 'comics/',
         hasPhotos: true
     },
     sketch: {
         route: '/sketchbook',
-        folder: '/sketchbook-photos',
+        folder: 'sketchbook/',
         hasPhotos: true
     },
     about: {

@@ -64,6 +64,23 @@
     margin-bottom: 50px;
 }
 
+.selected div {
+    
+}
+
+.selected div p {
+    color: #FD6356;
+}
+
+/*.selected div p:after {
+    width: 50px;
+    content: "";
+    position: absolute;
+    padding-top: 22px;
+    color: #FD6356;
+    border-bottom: 2px solid;
+}*/
+
 .links {
     padding-top: 15px;
     width: 100px;
@@ -85,7 +102,7 @@
 .nav ul li a {
     color: rgba(280, 280, 280, 0.6);
     text-decoration: none;
-    
+    outline: none;
 
     /* color: #1F1F1F; */
     /* opacity: 0.6; */
