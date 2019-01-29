@@ -50,6 +50,16 @@ class PhotoDisplay extends React.Component {
         );
     }
 
+    /**
+     * TODO:
+     *      Add modal class
+     *      Make an onclick that passes clicked photo to modal
+     *      Toggle modal
+     *          Click outside modal closes modal
+     *      
+     *      
+     */
+
     render() {
         return(
             <div className="container">
