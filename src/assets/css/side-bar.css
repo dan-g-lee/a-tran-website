@@ -85,6 +85,8 @@
     padding-top: 15px;
     width: 100px;
     justify-content: space-around;
+    /* position: absolute;
+    bottom: 15px; */
 }
 
 .nav {

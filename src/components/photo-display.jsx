@@ -3,6 +3,7 @@ import sizeMe from 'react-sizeme';
 import StackGrid from 'react-stack-grid';
 import '../assets/css/photo-display.css'
 import PhotoContainer from './photo-container';
+import PhotoModal from './photo-modal';
 
 class PhotoDisplay extends React.Component {
     /**
@@ -14,9 +15,15 @@ class PhotoDisplay extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            jsx: this.generatePhotos()
+            jsx: this.generatePhotos(),
+            modalTitle: "",
+            modalCaption: "",
+            modalPhoto: "",
+            modalVisible: false
         }
-        this.generatePhotos = this.generatePhotos.bind(this);  
+        this.generatePhotos = this.generatePhotos.bind(this);
+        this.handleClick = this.handleClick.bind(this);
+        this.toggleModal = this.toggleModal.bind(this);
     }
 
     /**
@@ -35,6 +42,7 @@ class PhotoDisplay extends React.Component {
                     caption={"No Description."}
                     width={300}
                     key={value}
+                    onClick={() => this.handleClick("No Title.", "No Description.", this.props.photos[value])}
                 />
             );
         })
@@ -48,6 +56,29 @@ class PhotoDisplay extends React.Component {
                 {photos}
             </StackGrid>
         );
+    }
+
+    handleClick(title, caption, value) {
+        this.setState({
+            modalTitle: title,
+            modalCaption: caption,
+            modalPhoto: value
+        });
+        this.toggleModal();
+    }
+
+    toggleModal() {
+        this.setState(prevState => ({
+            modalVisible: !prevState.modalVisible
+        }));
+        //Prevents the previous photo from showing up when clicking a different photo
+        if(this.state.modalVisible) {
+            this.setState(prevState => ({
+                modalTitle: "",
+                modalCaption: "",
+                modalPhoto: "",
+            }));
+        }
     }
 
     /**
@@ -64,6 +95,13 @@ class PhotoDisplay extends React.Component {
         return(
             <div className="container">
                 {this.state.jsx}
+                <PhotoModal
+                    title={this.state.modalTitle}
+                    caption={this.state.modalCaption}
+                    photo={this.state.modalPhoto}
+                    visible={this.state.modalVisible}
+                    toggleModal={this.toggleModal}
+                />
             </div>
         );
     }

@@ -18,7 +18,7 @@ export default class PhotoContainer extends React.Component {
 
     render() {
         return(
-            <div key={this.props.id} className="photo-container-shell">
+            <div key={this.props.id} className="photo-container-shell" onClick={() => this.props.onClick()}>
                 <div><img className="photo-container-img" src={this.props.photo} alt={this.props.title}/></div>
                 <div className="photo-container-text">
                     <h2>{this.props.title}</h2>

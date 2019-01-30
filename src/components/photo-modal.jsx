@@ -31,9 +31,18 @@ class PhotoModal extends React.Component {
      */
 
     render() {
+        console.log("VISIBLE?", this.props.visible)
         return(
-            <div className="modal-container">
-                <img className="modal-image" src={this.props.photo} alt={this.props.title}/>
+            <div className={this.props.visible ? "modal-container" : "modal-container invisible"} onClick={() => this.props.toggleModal()}>
+                {/* <div className="modal-close">&#10006;</div> */}
+                <div className="modal-content-wrapper">
+                    <img className="modal-image" src={this.props.photo} alt={this.props.title}/>
+                    <div className="modal-text-area">
+                        <div className="modal-author-info"><b>Alanna Tran</b> (b. 2000)</div>
+                        <div className="modal-title">{this.props.title}</div>
+                        <div className="modal-caption">{this.props.caption}</div>
+                    </div>
+                </div>
             </div>
         );
     }
