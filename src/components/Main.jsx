@@ -1,6 +1,7 @@
 import React from 'react';
 import {Switch, Route} from 'react-router-dom';
 import PhotoDisplay from './photo-display';
+import About from './about';
 import '../assets/css/main.css'
 
 class Main extends React.Component {
@@ -53,6 +54,10 @@ class Main extends React.Component {
                         folder={this.props.routes[value].folder}
                         hasPhotos={this.props.routes[value].hasPhotos}
                     />
+                )}/>);
+            else if(value === 'about')
+                routes.push(<Route key={index} path={this.props.routes[value].route} render={(props) => (
+                   <About />
                 )}/>);
             else
                 routes.push(<Route key={index} path={this.props.routes[value].route} render={(props) => (

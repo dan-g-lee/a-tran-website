@@ -1,16 +1,16 @@
 import React from 'react';
 import {NavLink} from 'react-router-dom';
 import '../assets/css/side-bar.css';
-import Photo from '../assets/headshot1.jpg';
 import SVGIcon from './svg-icons'
 
 export default class SideBar extends React.Component {
     render() {
         return(
             <div className="side-bar flex-box-vert">
-                <img className="photo flex-box-item" src={Photo} alt="Alanna Tran"/>
-                <div className="photo-title flex-box-item"><h2>ALANNA TRAN</h2></div>
+                <div className="photo-title flex-box-item"><h2>ALANNA</h2></div>
+                <div className="photo-title flex-box-item"><h2>TRAN</h2></div>
                 <div className="flex-box-item line"></div>
+                <div className="flex-box-item line subline"></div>
                 <div className="photo-subtitle flex-box-item">artist and designer</div>
                 <div className="nav flex-box-item">
                     <ul>
