@@ -1,13 +1,13 @@
 import React from 'react';
 import '../assets/css/about.css'
-import PropTypes from 'prop-types';
+//import PropTypes from 'prop-types';
 import Photo from '../assets/headshot1.jpg';
 
 export default class About extends React.Component {
 
-    static propTypes = {
+    /*static propTypes = {
 
-    }
+    }*/
 
     render() {
         return(

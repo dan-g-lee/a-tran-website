@@ -1,0 +1,67 @@
+{
+    "art/dream-library.png": {
+        "name": "Dream Library",
+        "desc": "Acrylic on Canvas",
+        "year": ""
+    },
+    "art/seated-self.png": {
+        "name": "Seated Self",
+        "desc": "Watercolor and colored pencil on paper",
+        "year": ""
+    },
+    "art/derive.png": {
+        "name": "Dérive",
+        "desc": "Acrylic on canvas, maps glued onto canvas",
+        "year": ""
+    },
+    "art/sticks.png": {
+        "name": "Sticks",
+        "desc": "Pastel and charcoal on toned paper",
+        "year": ""
+    },
+    "art/room-2.png": {
+        "name": "Room 2",
+        "desc": "Acrylic on cardboard, ink on paper",
+        "year": ""
+    },
+    "art/room-1.png": {
+        "name": "Room 1",
+        "desc": "Acrylic on cardboard, ink on paper",
+        "year": ""
+    },
+    "art/grip.png": {
+        "name": "Grip",
+        "desc": "Adobe Photoshop CC",
+        "year": ""
+    },
+    "art/backyard.png": {
+        "name": "Backyard",
+        "desc": "Acrylic on wood panel",
+        "year": ""
+    },
+    "art/room-4.png": {
+        "name": "Room 4",
+        "desc": "Acrylic on cardboard, ink on paper",
+        "year": ""
+    },
+    "art/room-3.png": {
+        "name": "Room 3",
+        "desc": "Acrylic on cardboard, ink and colored pencil on paper",
+        "year": ""
+    },
+    "art/sarah.png": {
+        "name": "Dérive",
+        "desc": "Acrylic on paper",
+        "year": ""
+    },
+    "art/cowboy.png": {
+        "name": "Cowboy",
+        "desc": "Ink on bristol",
+        "year": ""
+    },
+    "art/room-5.png": {
+        "name": "Room 5",
+        "desc": "Acrylic on cardboard, ink and colored pencil on paper",
+        "year": ""
+    }
+}

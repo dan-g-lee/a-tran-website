@@ -1,5 +1,5 @@
 import React from 'react';
-import {Switch, Route} from 'react-router-dom';
+import {Switch, Route, Redirect} from 'react-router-dom';
 import PhotoDisplay from './photo-display';
 import About from './about';
 import '../assets/css/main.css'
@@ -14,7 +14,9 @@ class Main extends React.Component {
         }
         this.generateRoutes = this.generateRoutes.bind(this);
         this.separatePhotos = this.separatePhotos.bind(this);
+        this.separateInfo = this.separateInfo.bind(this);
         this.separatePhotos();
+        this.separateInfo();
     }
 
     /**
@@ -36,9 +38,22 @@ class Main extends React.Component {
                 };
             }
         });
+        console.log("NOT SORTED: ", sorted)
+        console.log("SORTED: ", sorted);
         return sorted;
     }
 
+    separateInfo() {
+        let infoKeys = Object.keys(this.props.info);
+        console.log(this.props.info)
+        infoKeys.forEach((key, index) => {
+            console.log(this.props.info[key]);
+        });
+    }
+
+    /**
+     * Generates page content
+     */
     generateRoutes() {
         let routes = [];
         let keys = Object.keys(this.props.routes);
@@ -49,11 +64,12 @@ class Main extends React.Component {
             console.log(this.props.routes[value].folder);
             if(value === 'home')
                 routes.push(<Route key={index} exact path={this.props.routes[value].route} render={(props) => (
-                    <PhotoDisplay
+                    <Redirect to="/art" />
+                    /*<PhotoDisplay
                         {...props}
                         folder={this.props.routes[value].folder}
                         hasPhotos={this.props.routes[value].hasPhotos}
-                    />
+                    />*/
                 )}/>);
             else if(value === 'about')
                 routes.push(<Route key={index} path={this.props.routes[value].route} render={(props) => (
@@ -66,6 +82,7 @@ class Main extends React.Component {
                         folder={this.props.routes[value].folder}
                         hasPhotos={this.props.routes[value].hasPhotos}
                         photos={sorted[value]}
+                        info={this.props.info[this.props.routes[value].json]}
                     />
                 )}/>);
         });

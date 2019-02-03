@@ -18,6 +18,7 @@ class PhotoDisplay extends React.Component {
             jsx: this.generatePhotos(),
             modalTitle: "",
             modalCaption: "",
+            modalYear: "",
             modalPhoto: "",
             modalVisible: false
         }
@@ -35,14 +36,17 @@ class PhotoDisplay extends React.Component {
         let photos = [];
         let keys = Object.keys(this.props.photos);
         keys.forEach((value, index) => {
+            let caption = this.props.info[value].desc !== "" ? this.props.info[value].desc : "No Description.";
+            let year = this.props.info[value].year !== "" ? "(" + this.props.info[value].year + ")" : "";
             photos.push(
                 <PhotoContainer 
                     photo={this.props.photos[value]}
-                    title={"No Title."}
-                    caption={"No Description."}
+                    title={this.props.info[value].name}
+                    caption={caption}
+                    year={year}
                     width={300}
                     key={value}
-                    onClick={() => this.handleClick("No Title.", "No Description.", this.props.photos[value])}
+                    onClick={() => this.handleClick(this.props.info[value].name, caption, year, this.props.photos[value])}
                 />
             );
         })
@@ -58,10 +62,11 @@ class PhotoDisplay extends React.Component {
         );
     }
 
-    handleClick(title, caption, value) {
+    handleClick(title, caption, year, value) {
         this.setState({
             modalTitle: title,
             modalCaption: caption,
+            modalYear: year,
             modalPhoto: value
         });
         this.toggleModal();
@@ -76,7 +81,8 @@ class PhotoDisplay extends React.Component {
             this.setState(prevState => ({
                 modalTitle: "",
                 modalCaption: "",
-                modalPhoto: "",
+                modalYear: "",
+                modalPhoto: ""
             }));
         }
     }

@@ -7,20 +7,24 @@ export default class SideBar extends React.Component {
     render() {
         return(
             <div className="side-bar flex-box-vert">
-                <div className="photo-title flex-box-item"><h2>ALANNA</h2></div>
-                <div className="photo-title flex-box-item"><h2>TRAN</h2></div>
-                <div className="flex-box-item line"></div>
-                <div className="flex-box-item line subline"></div>
-                <div className="photo-subtitle flex-box-item">artist and designer</div>
-                <div className="nav flex-box-item">
-                    <ul>
-                        <li><NavLink to="/art" activeClassName="selected"><div><p>ART</p></div></NavLink></li>
-                        <li><NavLink to="/design" activeClassName="selected"><div><p>DESIGN</p></div></NavLink></li>
-                        <li><NavLink to="/figure-drawings" activeClassName="selected"><div><p>FIGURE DRAWINGS</p></div></NavLink></li>
-                        <li><NavLink to="/comics" activeClassName="selected"><div><p>COMICS</p></div></NavLink></li>
-                        <li><NavLink to="/sketchbook" activeClassName="selected"><div><p>SKETCHBOOK</p></div></NavLink></li>
-                        <li><NavLink to="/about" activeClassName="selected"><div><p>ABOUT ME</p></div></NavLink></li>
-                    </ul>
+                <div className="flex-box-vert">
+                    <div className="logo-container flex-box-vert">
+                        <div className="photo-title flex-box-item"><h2>ALANNA</h2></div>
+                        <div className="photo-title flex-box-item"><h2>TRAN</h2></div>
+                        <div className="flex-box-item line"></div>
+                        <div className="flex-box-item line subline"></div>
+                        <div className="photo-subtitle flex-box-item">artist and designer</div>
+                    </div>
+                    <div className="nav flex-box-item">
+                        <ul>
+                            <li><NavLink to="/art" activeClassName="selected"><div><p>ART</p></div></NavLink></li>
+                            <li><NavLink to="/design" activeClassName="selected"><div><p>DESIGN</p></div></NavLink></li>
+                            <li><NavLink to="/figure-drawings" activeClassName="selected"><div><p>FIGURE DRAWINGS</p></div></NavLink></li>
+                            <li><NavLink to="/comics" activeClassName="selected"><div><p>COMICS</p></div></NavLink></li>
+                            <li><NavLink to="/sketchbook" activeClassName="selected"><div><p>SKETCHBOOK</p></div></NavLink></li>
+                            <li><NavLink to="/about" activeClassName="selected"><div><p>ABOUT ME</p></div></NavLink></li>
+                        </ul>
+                    </div>
                 </div>
                 <div className="links flex-box-item">
                     <SVGIcon 

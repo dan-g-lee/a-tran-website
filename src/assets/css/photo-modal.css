@@ -6,7 +6,7 @@
     height: 100vh;
     z-index: 101;
     justify-content: center;
-    background-color: rgba(255, 255, 255, 0.6);
+    /* background-color: rgba(255, 255, 255, 0.6); */
     animation: display 0.2s cubic-bezier();
 }
 
@@ -23,6 +23,63 @@
     /* background-color: rgba(255, 255, 255, 1); */
 }
 
+.modal-content-center {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 100%;
+    padding: 0px 50px 0px 50px;
+    background-color: white;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.25), 0 1px 2px rgba(0,0,0,0.50);
+}
+
+.x {
+    float: left;
+    position: relative;
+    margin: 0;
+    margin-top: 10px;
+    padding: 0;
+    overflow: hidden;
+    background: #CCC;
+    border-radius: 2px;
+    border: solid 2px #FFF;
+    transition: all .3s ease-out;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+}
+
+.x b {
+    display: block;
+    position: absolute;
+    height: 0;
+    width: 0;
+    padding: 0;
+    margin: 0;
+    border: solid 10px rgba(255,255,255,0);
+}
+
+.x b:nth-child(1){
+    border-top-color: #FFF;
+    top: -2px;
+}
+.x b:nth-child(2){
+    border-left-color: #FFF;
+    left: -2px;
+}
+.x b:nth-child(3){
+    border-bottom-color: #FFF;
+    bottom: -2px;
+}
+.x b:nth-child(4){
+    border-right-color: #FFF;
+    right: -2px;
+}
+
+.modal-close {
+    left: 101%;    
+}
+
 .modal-image {
     height: 85%;
     padding: 25px;
@@ -37,7 +94,7 @@
     background-color: rgba(255, 255, 255, 1);
     min-width: 200px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.15), 0 1px 2px rgba(0,0,0,0.30);
-    
+    max-width: 330px;
 }
 
 .modal-author-info {
