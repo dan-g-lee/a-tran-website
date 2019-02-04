@@ -1,71 +1,111 @@
-@import url('https://fonts.googleapis.com/css?family=Lato:300,200,400');
+@import url('https://fonts.googleapis.com/css?family=Lato:300,200,400|Shadows+Into+Light');
 
 .about-container {
     display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
     /* background-color: white; */
     width: 100%;
     height: 100vh;
 }
 
-.about-content-shell {
-    display: grid;
-    grid-template-columns: 15% 1% 15% 5% 10% 10% 10% auto;
-    grid-template-rows: 6.25% 6.25% 6.25% 6.25% 25% 25% 25% auto;
-    /* flex-direction: row; */
-    /* align-self: center;
-    justify-content: center; */
-    width: 100%;
-    padding: 50px;
-}
-
-/*.about-flex-box-item {
+.about-photo-container {
     display: flex;
-    margin: 0px;
-}*/
-
-.about-grid-item1 {
-    grid-column-start: 1;
-    grid-column-end: 2;
-    grid-row-start: 1;
-    grid-row-end: 5;
-    border-radius: 50%;
-    justify-self: center;
-    display: flex;
-    justify-content: center;
-    width: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: white;
+    height: 350px;
+    width: 300px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    margin-top: 50px;
+    transform: rotate(-8deg);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 }
 
-.about-grid-item2 {
-    grid-column-start: 3;
-    grid-column-end: 4;
-    grid-row-start: 3;
-    grid-row-end: 5;
+.about-photo-container:hover {
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    /* cursor: pointer; */
 }
 
-.about-grid-item3 {
-    grid-column-start: 3;
-    grid-column-end: 4;
-    grid-row-start: 1;
-    grid-row-end: 3;
-    font-size: 2.3em;
-    font-family: 'Lato', sans-serif;
-    align-self: end;
-    margin-bottom: 20px;
-    font-weight: 100;
+.about-photo-container::after {
+    /* visibility: hidden; */
+    transition: box-shadow 0.3s cubic-bezier(.25,.8,.25,1);
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 1.2em;
+    line-height: 100%;
+    width: 200px;
+    height: auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 136, 1);
+    transform: rotate(12deg);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    /* right: -10%; */
+    /* bottom: 0; */
+    top: 10%;
+    left: -50%;
+    position: absolute;
+    content: "Artist and designer. Born and raised in sunny southern California, now studying at the School of the Art Institute of Chicago. Dog lover and ice cream enthusiast.";
+}
+
+.about-photo-container:hover::after {
+    box-shadow: 0px 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
 
 .about-photo {
-    display: block;
-    height: 100%;
-    max-width: auto;
+    width: 280px;
+    margin-top: 10px;
+    align-self: center;
+    /* max-width: auto;
     width: auto;
-    min-width: auto;
-    border-radius: 50%;
+    min-width: auto; */
+    /* border-radius: 50%; */
 }
 
-.about-desc {
+.about-name {
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 1.8em;
+    font-weight: bold;
+    align-self: center;
+    margin-bottom: 5px;
+    padding-left: 5px;
+    
+}
+
+.about-education-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.about-saic-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: white;
+    height: 350px;
+    width: 300px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    margin-top: 50px;
+    margin-bottom: 50px;
+    /* transform: rotate(-8deg); */
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+.about-saic {
     max-width: 100%;
-    font-size: 1.1em;
-    font-family: 'Lato', sans-serif;
+    font-size: 1.3em;
+    /* font-family: 'Lato', sans-serif; */
+    font-family: 'Shadows Into Light', cursive;
+    align-self: center;
     font-weight: 100;
+    line-height: 100%;
+    margin: 0px 10px 10px 10px;
+}
+
+.about-education-item {
+    transform: rotate(0deg);
+}
+
+.saic {
+    justify-self: center;
 }
