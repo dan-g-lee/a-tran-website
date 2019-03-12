@@ -46,6 +46,7 @@
     /* background-color: #F4E5B8;#DDEFC9; */
     background-color: rgba(30, 30, 30, 1);
     align-self: flex-end;
+    margin-right: 25px;
     margin-top: 10px;
     padding-left: 30px;
     box-shadow: 25px 25px 0px #B0B6A8;
@@ -203,14 +204,14 @@
     top: 100px;
 }
 
-.credits p a {
+/*.credits p a {
 
-}
+}*/
 
-@keyframes slidein {
+/*@keyframes slidein {
     100% {left: 0px;}
 }
 
 @keyframes fadeinout {
 
-}
+}*/

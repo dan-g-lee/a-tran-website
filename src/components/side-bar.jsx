@@ -13,7 +13,7 @@ export default class SideBar extends React.Component {
                         <div className="photo-title flex-box-item"><h2>TRAN</h2></div>
                         <div className="flex-box-item line"></div>
                         <div className="flex-box-item line subline"></div>
-                        <div className="photo-subtitle flex-box-item">artist and designer</div>
+                        <div className="photo-subtitle flex-box-item">artist {"&"} graphic designer</div>
                     </div>
                     <div className="nav flex-box-item">
                         <ul>
